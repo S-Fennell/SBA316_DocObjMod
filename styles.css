@@ -1,0 +1,29 @@
+#body{
+    display: flex;
+    justify-content: center;
+}
+#mainDiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: skyblue;
+    border: 1rem solid midnightblue;
+    width: 100%;
+
+}
+#formDiv{
+    display: flex;
+    background-color: lightgray;
+    height: 5rem;
+    border-radius: 2rem;
+    padding: 2rem;
+    margin: 2rem;
+}
+.input{
+    margin-bottom: .5rem;
+}
+
+
+#rule{
+
+}
