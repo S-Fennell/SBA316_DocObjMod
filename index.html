@@ -7,29 +7,31 @@
     <title>Document</title>
     <script src="script.js" defer></script>
 </head>
-<body id="body">
+<body>
 
     <div id="mainDiv">
-        <h3 id="rule">Must be at least 18 to play</h3>
-      <div id="formDiv">
-        <form id="Fname"  action="">
-           <label  for="">First Name:
-            <input class="input" type="text">
-           </label>
-             <br>
-        
-           <label class="label" id="Lname" for="">Last Name:
-            <input class="input" type="text">
-           </label>
-             <br>
-           <label class="label" id="DOB" for="">Date of Birth:
-            <input class="input" type="date">
-           </label>
-        
-        </form>
-      </div>
-    </div>
-   
 
+        <h3 id="rule">Must be at least 18 to play</h3>
+
+      <div id="formDiv">
+            <form name="myForm" action="" onsubmit="return validateForm()">
+                <label for="">First Name:
+                    <input id="Fname" class="input" type="text" name="Fname" required>
+                </label>
+                    <br>
+                <label class="label" id="Lname" for="">Last Name:
+                    <input id="Lname" class="input" type="text" name="Lname" required>
+                </label>
+                    <br>
+                <label class="label" id="DOB" for="">Date of Birth:
+                    <input id="DOB" class="input" type="date" required>
+                </label>
+                <button id="submit" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    
+   
 </body>
 </html>

@@ -1,20 +1,21 @@
-#body{
-    display: flex;
-    justify-content: center;
-}
+
 #mainDiv{
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     background-color: skyblue;
     border: 1rem solid midnightblue;
-    width: 100%;
-
+    border-radius: 4rem;
+    width: 30rem;
+    padding: 2rem;
+    margin: 0 auto;
 }
 #formDiv{
     display: flex;
-    background-color: lightgray;
+    justify-content: center;
+    background-color: lightgoldenrodyellow;
     height: 5rem;
+    
     border-radius: 2rem;
     padding: 2rem;
     margin: 2rem;
@@ -25,5 +26,28 @@
 
 
 #rule{
+    display: flex;
+    background-color: lightgoldenrodyellow;
+    justify-content: center;
+    width: 14rem;
+    border-radius: .5rem;
+    margin: auto;
+}
 
+/* create cards css */
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    gap: 10px;
+    margin: auto;
+    width: max-content;
+}
+
+.card{
+    border: .5rem solid midnightblue;
+    background-color: blue;
+    cursor: pointer;
+    height: 80px;
+    width: 60px;
 }
