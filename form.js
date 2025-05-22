@@ -57,7 +57,9 @@ input.setAttribute('name', 'username');
 input.setAttribute('placeholder', 'username');
 input.setAttribute('minlength', '6');
 input.setAttribute('maxlength', '9');
-input.setAttribute('required', '');
+//input.setAttribute('required', '');
+
+
 
 input1.setAttribute('id', 'email')
 input1.setAttribute('type', 'email');
@@ -65,7 +67,7 @@ input1.setAttribute('name', 'email');
 input1.setAttribute('placeholder', 'email');
 input1.setAttribute('minlength', '3');
 input1.setAttribute('maxlength', '12');
-input1.setAttribute('required', '');
+//input1.setAttribute('required', '');
 
 input2.setAttribute('id', 'password')
 input2.setAttribute('type', 'password');
@@ -73,45 +75,101 @@ input2.setAttribute('name', 'pw');
 input2.setAttribute('placeholder', 'password');
 input2.setAttribute('minlength', '7');
 input2.setAttribute('maxlength', '14');
-input2.setAttribute('required', '');
+//input2.setAttribute('required', '');
 
 input3.setAttribute('id', 'password1');
 input3.setAttribute('type', 'password1');
 input3.setAttribute('name', 'cpw');
 input3.setAttribute('placeholder', 'Re-enter password');
-input3.setAttribute('required', '');
+//input3.setAttribute('required', '');
 
 span.setAttribute('id', 'usernameError');
 span1.setAttribute('id', 'emailError');
 span2.setAttribute('id', 'passwordError');
 span3.setAttribute('id', 'nameError');
 
-
 formContainer.classList.add('container');
 body.appendChild(formContainer);
 body.style.backgroundColor = 'grey';
 
-subBtn.addEventListener('click',(e)=>{
 
-    e.preventDefault()
-    let username = document.getElementsByName('username');
+//testing functionality:
+subBtn.addEventListener('mousemove',()=>{
+    input.backgroundColor = 'blue';
+    body.style.backgroundColor = 'lightblue';
+})
 
-    if(username.value === ''){
+subBtn.addEventListener('click',userValidation);
 
+ 
+//span error message to be displayed but
+function userValidation(){
+       const div = document.createElement('div');
+    div.style.backgroundColor = 'blue';
+    div.style.borderRadius = '50%';
+    div.style.height= '80px';
+    div.style.width = '80px';
+    div.style.display = 'flex';
+    div.style.justifyContent = 'center';
+    div.style.alignContent = 'center';
+    body.appendChild(div);
+    div.innerHTML = '<h5>test dot!</h5>'
+
+    let userName = document.getElementById('username').value;
+     if(userName.length === ""){
+        span.innerText = 'Username required';
+    }
+    span.innerText = 'valid';
+}
+   
+  
+form.addEventListener('change', ()=>{
     const div = document.createElement('div');
     div.style.backgroundColor = 'blue';
     div.style.borderRadius = '50%';
     div.style.height= '80px';
     div.style.width = '80px';
+    div.style.display = 'flex';
+    div.style.justifyContent = 'center';
+    div.style.alignContent = 'center';
     body.appendChild(div);
-
-    }
-
-
-
+    div.innerHTML = '<h5>test dot!</h5>'
 })
+const border = document.createElement('hr');
+//------new----
 
-form.addEventListener('change', ()=>{
-    
-})
+const gameFrame = document.createElement('div');
+const gameContainer = document.createElement('div');
+const boxDiv0 = document.createElement('div')
+const boxDiv1 = document.createElement('div');
+const boxDiv2 = document.createElement('div');
+const boxDiv3 = document.createElement('div');
+const boxDiv4 = document.createElement('div');
+const boxDiv5 = document.createElement('div');
+const boxDiv6 = document.createElement('div');
+const boxDiv7 = document.createElement('div');
+const boxDiv8 = document.createElement('div');
+gameContainer.appendChild(boxDiv0);
+gameContainer.appendChild(boxDiv1);
+gameContainer.appendChild(boxDiv2);
+gameContainer.appendChild(boxDiv3);
+gameContainer.appendChild(boxDiv4);
+gameContainer.appendChild(boxDiv5);
+gameContainer.appendChild(boxDiv6);
+gameContainer.appendChild(boxDiv7);
+gameContainer.appendChild(boxDiv8);
+gameFrame.appendChild(gameContainer);
+const gameTitle = document.createElement('h1')
+gameTitle.textContent = 'Tic Tac Toe';
+gameFrame.prepend(gameTitle);
+body.appendChild(gameFrame);
+const restart_btn = document.createElement('button')
+restart_btn.innerText = 'RESTART';
+const winnerIs = document.createElement('h4');
+winnerIs.innerText = 'Winner is!';
+gameFrame.appendChild(winnerIs);
+gameFrame.appendChild(restart_btn)
+boxDiv0.classList.add('boxes');
+
+
 
