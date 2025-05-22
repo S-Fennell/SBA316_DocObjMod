@@ -221,7 +221,8 @@ const gameTitle = document.createElement('h1')
 gameTitle.textContent = 'Tic Tac Toe';
 gameFrame.prepend(gameTitle);
 body.appendChild(gameFrame);
-const restart_btn = document.createElement('button')
+const restart_btn = document.createElement('button');
+restart_btn.setAttribute('id', 'restartBtn');
 restart_btn.innerText = 'RESTART';
 const winnerIs = document.createElement('h4');
 winnerIs.innerText = 'Winner is!';
@@ -239,15 +240,13 @@ const array = [
     [0, 4, 8],
     [2, 4, 6]
 ];
-let x = 'X';
-let o = 'O';
-const picks = ['', '', '', '', '', '', '', '', ''];
-const player = x;
-const gameOn = false;
+// let x = 'X';
+// let o = 'O';
+const option = ['', '', '', '', '', '', '', '', ''];
 
-function startGame(){
-    boxes.forEach(boxes => boxes.addEventListener('click',boxPicked))
-    newGame.addEventListener('click', startNewGame);
+let boxes = document.querySelectorAll('.boxes')//I thought querySelectorAll selects all classes. Obviously not!
 
-}
+boxes.addEventListener('mouseover', ()=>{
+    boxes.style.backgroundColor = 'blue';
+})
 
