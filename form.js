@@ -1,4 +1,7 @@
 const body = document.querySelector('body');
+
+body.style.backgroundImage = 'url(/images/game.avif)';
+
 const formContainer = document.createElement('div');//div form container
 const form = document.createElement('form');//<form>
 
@@ -131,7 +134,8 @@ form.addEventListener('change', ()=>{
     div.innerHTML = '<h5>test dot!</h5>';
 })
 const border = document.createElement('hr');
-//------new----
+body.appendChild(border);
+//------tic tac toe below------------------------------------
 
 const gameFrame = document.createElement('div');
 const gameContainer = document.createElement('div');
@@ -147,6 +151,7 @@ const boxDiv7 = document.createElement('div');
 const boxDiv8 = document.createElement('div');
 
 gameContainer.style.border = '4px solid black';
+gameContainer.style.borderRadius = '8px';
 gameContainer.style.display = 'grid';
 gameContainer.style.gridTemplateColumns = 'repeat(3, 80px)';
 gameContainer.style.gap = '10px';
@@ -154,42 +159,53 @@ gameContainer.style.margin = 'auto';
 gameContainer.style. width = 'max-content';
 gameContainer.style.padding = "20px";
 
+
 //squares
-boxDiv0.style.border= '3px solid black';
+boxDiv0.style.border= '3px solid grey';
 boxDiv0.style.height= '80px';
 boxDiv0.style.width= '80px';
+boxDiv0.style.backgroundColor = 'rgb(209, 237, 201)';
 
-boxDiv1.style.border= '3px solid black';
+
+boxDiv1.style.border= '3px solid grey';
 boxDiv1.style.height= '80px';
 boxDiv1.style.width= '80px';
+boxDiv1.style.backgroundColor = 'rgb(209, 237, 201)';
 
-boxDiv2.style.border= '3px solid black';
+boxDiv2.style.border= '3px solid grey';
 boxDiv2.style.height= '80px';
 boxDiv2.style.width= '80px';
+boxDiv2.style.backgroundColor = 'rgb(209, 237, 201)';
 
-boxDiv3.style.border= '3px solid black';
+boxDiv3.style.border= '3px solid grey';
 boxDiv3.style.height= '80px';
 boxDiv3.style.width= '80px';
+boxDiv3.style.backgroundColor = 'rgb(209, 237, 201)';
 
-boxDiv4.style.border= '3px solid black';
+boxDiv4.style.border= '3px solid grey';
 boxDiv4.style.height= '80px';
 boxDiv4.style.width= '80px';
+boxDiv4.style.backgroundColor = 'rgb(209, 237, 201)';
 
-boxDiv5.style.border= '3px solid black';
+boxDiv5.style.border= '3px solid grey';
 boxDiv5.style.height= '80px';
 boxDiv5.style.width= '80px';
+boxDiv5.style.backgroundColor = 'rgb(209, 237, 201)';
 
-boxDiv6.style.border= '3px solid black';
+boxDiv6.style.border= '3px solid grey';
 boxDiv6.style.height= '80px';
 boxDiv6.style.width= '80px';
+boxDiv6.style.backgroundColor = 'rgb(209, 237, 201)';
 
-boxDiv7.style.border= '3px solid black';
+boxDiv7.style.border= '3px solid grey';
 boxDiv7.style.height= '80px';
 boxDiv7.style.width= '80px';
+boxDiv7.style.backgroundColor = 'rgb(209, 237, 201)';
 
-boxDiv8.style.border= '3px solid black';
+boxDiv8.style.border= '3px solid grey';
 boxDiv8.style.height= '80px';
 boxDiv8.style.width= '80px';
+boxDiv8.style.backgroundColor = 'rgb(209, 237, 201)';
 
 boxDiv0.classList.add('boxes');
 boxDiv1.classList.add('boxes');
@@ -211,6 +227,7 @@ gameContainer.appendChild(boxDiv6);
 gameContainer.appendChild(boxDiv7);
 gameContainer.appendChild(boxDiv8);
 gameFrame.appendChild(gameContainer);
+gameContainer.style.backgroundColor = 'green';
 
 //There seems to be nothing I can do to access this className to give them all a heigth and width. so how I have to do them all seprately.
 // const boxes = document.getElementById('container').getElementsByClassName('boxes');
@@ -251,6 +268,27 @@ let boxes = document.querySelectorAll('.boxes')//I thought querySelectorAll sele
 // })
 let line = document.createElement('hr');
 body.appendChild(line);
+// cee lo dice game below--------------------------------
+body.style.backgroundColor = 'rgb(71, 144, 234'
+let buttonContainer = document.createElement('div');
+let gameBox = document.createElement('div');
+let winLose = document.createElement('div');
+
+buttonContainer.style.display = 'flex';
+buttonContainer.style.justifyContent = 'center';
+
+gameBox.setAttribute('id','gamebox');
+gameBox.style.display = 'flex';
+gameBox.style.justifyContent = 'center';
+
+winLose.style.display = 'flex';
+winLose.style.justifyContent = 'conter';
+winLose.innerHTML = '<h2>?</h2>'
+
+
+body.appendChild(buttonContainer);
+body.appendChild(gameBox);
+body.appendChild(winLose);
 
 
 let button = document.createElement('button');
@@ -288,29 +326,95 @@ labelDiv2.appendChild(myLabel2);
 body.appendChild(labelDiv2);
 
 
+let image = document.createElement('img');
+buttonContainer.appendChild(image);
+image.setAttribute('src','images/ceelo.png')
+
+buttonContainer.appendChild(button);
+buttonContainer.style.display = 'flex';
+buttonContainer.style.flexDirection = 'column'
+gameBox.appendChild(labelDiv);
+gameBox.appendChild(labelDiv1);
+gameBox.appendChild(labelDiv2);
+labelDiv.style.paddingLeft = '40px';
+labelDiv1.style.paddingLeft = '40px';
+labelDiv2.style.paddingLeft = '40px';
+
+let winLosebox = document.createElement('div');
+winLosebox.appendChild(winLose)
+winLosebox.style.display = 'flex';
+winLosebox.style.justifyContent = 'center';
+winLose.style.backgroundColor = 'lightgrey'
+body.appendChild(winLosebox);
+
+    labelDiv.style.backgroundColor = 'rgb(195, 216, 190)';
+    labelDiv1.style.backgroundColor = 'rgb(202, 227, 194)';
+    labelDiv2.style.backgroundColor = 'rgb(205, 231, 198)';
 
 
 
 
-button.addEventListener('click',()=>{
-    let randomNumber = Math.floor(Math.random() * 6 +1)
-    myLabel.innerText = randomNumber;
-    console.log(randomNumber);
-    
-})
 button.addEventListener('click',()=>{
     let randomNumber = Math.floor(Math.random() * 6 +1)
     myLabel1.innerText = randomNumber;
     console.log(randomNumber);
-    
+   
 })
 
 button.addEventListener('click',()=>{
     let randomNumber = Math.floor(Math.random() * 6 +1)
     myLabel2.innerText = randomNumber;
     console.log(randomNumber);
-    
+   
 })
+
+button.addEventListener('click',()=>{
+    let randomNumber = Math.floor(Math.random() * 6 +1)
+    myLabel.innerText = randomNumber;
+    console.log(randomNumber);
+
+    //---if esle
+    if(myLabel.innerText === '4' && myLabel1.innerText === '5' && myLabel2.innerText === '6' ||
+        myLabel.innerText === '5' && myLabel1.innerText === '6' && myLabel2.innerText === '4' ||
+    myLabel.innerText === '6' && myLabel1.innerText === '4' && myLabel2.innerText === '5' ||
+myLabel.innerText === '6' && myLabel1.innerText === '5' && myLabel2.innerText === '4' ||
+myLabel.innerText === '5' && myLabel1.innerText === '4' && myLabel2.innerText === '6' ||
+myLabel.innerText === '4' && myLabel1.innerText === '6' && myLabel2.innerText === '5'){
+    labelDiv.style.backgroundColor = 'rgb(76, 224, 35)';
+    labelDiv1.style.backgroundColor = 'rgb(76, 224, 35)';
+    labelDiv2.style.backgroundColor = 'rgb(76, 224, 35)';
+    winLose.innerText = 'Cee Lo: You Win!';
+    alert('Congratulations!');
+
+   
+}else if(myLabel.innerText === '1' && myLabel1.innerText === '1' && myLabel2.innerText === '1' || myLabel.innerText === '2' && myLabel1.innerText === '2' && myLabel2.innerText === '2'
+     || myLabel.innerText === '3' && myLabel1.innerText === '3' && myLabel2.innerText === '3' || myLabel.innerText === '4' && myLabel1.innerText === '4' && myLabel2.innerText === '4'
+     || myLabel.innerText === '5' && myLabel1.innerText === '5' && myLabel2.innerText === '5' || myLabel.innerText === '6' && myLabel1.innerText === '6' && myLabel2.innerText === '6'
+){
+    labelDiv.style.backgroundColor = 'rgb(76, 224, 35)';
+    labelDiv1.style.backgroundColor = 'rgb(76, 224, 35)';
+    labelDiv2.style.backgroundColor = 'rgb(67, 228, 22)';
+    winLose.innerText = 'Trips: You Win!';  
+    alert('Congratulations!');
+}else if(myLabel1.innerText === 1 && myLabel1.value === 2 && myLabel2 ===3){
+    labelDiv.style.backgroundColor = 'red';
+    labelDiv1.style.backgroundColor = 'red';
+    labelDiv2.style.backgrondColor = 'red';
+    winLose.innerText = '1,2,3: You Lose!';  
+    alert('Sorry!');   
+}else if(myLabel.value === 6 && myLabel1.value === 1  && myLabel2 === 1){
+    labelDiv.style.backgroundColor = 'rgb(76, 224, 35)';
+    labelDiv1.style.backgroundColor = 'rgb(76, 224, 35)';
+    labelDiv2.style.backgrondColor = 'rgb(76, 224, 35)';
+    winLose.innerHTML = '<h2>Six: You Win!</h2>'
+}
+
+
+})
+
+
+
+
 
 button.addEventListener('mouseover',()=>{
     button.style.backgroundColor= 'green';
@@ -320,9 +424,30 @@ button.addEventListener('mouseover',()=>{
     }, 2000)
 })
 
+//-----test code---------
+
+// myLabel.innerText = '7'
+// winLose.innerText = 'B'
+//  let content = winLose.innerText.valueOf();// gives the value content of the element
+//     console.log(content);
 
 
+//get lottery numbers-------
+let line2 = document.createElement('hr');
+body.appendChild(line2);
+let postWinNums = document.createElement('h1');
+let winnerBoard =document.createElement('div');
+body.appendChild(winnerBoard);
+winnerBoard.appendChild(postWinNums);
+winnerBoard.style.display = 'flex';
+winnerBoard.style.justifyContent = 'center';
+postWinNums.innerText = 'Wining Numbers';
 
+let numsPicked = Math.floor(Math.random()*100 + 1);
+let winnerNumbers = []
 
+for(let num =  0; num <= 100; num++){
 
+}
 
+//console.log(winnerNumbers);
