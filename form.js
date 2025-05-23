@@ -246,7 +246,83 @@ const option = ['', '', '', '', '', '', '', '', ''];
 
 let boxes = document.querySelectorAll('.boxes')//I thought querySelectorAll selects all classes. Obviously not!
 
-boxes.addEventListener('mouseover', ()=>{
-    boxes.style.backgroundColor = 'blue';
+// boxes.addEventListener('mouseover', ()=>{
+//     boxes.style.backgroundColor = 'blue';
+// })
+let line = document.createElement('hr');
+body.appendChild(line);
+
+
+let button = document.createElement('button');
+body.appendChild(button);
+button.style.fontSize = '5rem';
+button.style.padding = '10px';
+button.style.borderRadius = '10px';
+button.innerText = 'Roll Dice!'
+
+let labelDiv = document.createElement('div')
+labelDiv.style.height = '100px';
+labelDiv.style.width = '80px';
+labelDiv.style.border = '3px solid black'
+let myLabel = document.createElement('label');
+myLabel.style.fontSize = '4rem'
+labelDiv.appendChild(myLabel);
+body.appendChild(labelDiv);
+
+let labelDiv1 = document.createElement('div')
+labelDiv1.style.height = '100px';
+labelDiv1.style.width = '80px';
+labelDiv1.style.border = '3px solid black'
+let myLabel1 = document.createElement('label');
+myLabel1.style.fontSize = '4rem'
+labelDiv1.appendChild(myLabel1);
+body.appendChild(labelDiv1);
+
+let labelDiv2 = document.createElement('div')
+labelDiv2.style.height = '100px';
+labelDiv2.style.width = '80px';
+labelDiv2.style.border = '3px solid black'
+let myLabel2 = document.createElement('label');
+myLabel2.style.fontSize = '4rem'
+labelDiv2.appendChild(myLabel2);
+body.appendChild(labelDiv2);
+
+
+
+
+
+
+button.addEventListener('click',()=>{
+    let randomNumber = Math.floor(Math.random() * 6 +1)
+    myLabel.innerText = randomNumber;
+    console.log(randomNumber);
+    
 })
+button.addEventListener('click',()=>{
+    let randomNumber = Math.floor(Math.random() * 6 +1)
+    myLabel1.innerText = randomNumber;
+    console.log(randomNumber);
+    
+})
+
+button.addEventListener('click',()=>{
+    let randomNumber = Math.floor(Math.random() * 6 +1)
+    myLabel2.innerText = randomNumber;
+    console.log(randomNumber);
+    
+})
+
+button.addEventListener('mouseover',()=>{
+    button.style.backgroundColor= 'green';
+
+    setTimeout(()=>{
+        button.style.backgroundColor= 'blue';
+    }, 2000)
+})
+
+
+
+
+
+
 
