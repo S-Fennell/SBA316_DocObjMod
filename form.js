@@ -347,12 +347,9 @@ winLosebox.style.justifyContent = 'center';
 winLose.style.backgroundColor = 'lightgrey'
 body.appendChild(winLosebox);
 
-    labelDiv.style.backgroundColor = 'rgb(195, 216, 190)';
-    labelDiv1.style.backgroundColor = 'rgb(202, 227, 194)';
-    labelDiv2.style.backgroundColor = 'rgb(205, 231, 198)';
-
-
-
+labelDiv.style.backgroundColor = 'rgb(195, 216, 190)';
+labelDiv1.style.backgroundColor = 'rgb(202, 227, 194)';
+labelDiv2.style.backgroundColor = 'rgb(205, 231, 198)';
 
 button.addEventListener('click',()=>{
     let randomNumber = Math.floor(Math.random() * 6 +1)
@@ -371,45 +368,59 @@ button.addEventListener('click',()=>{
 button.addEventListener('click',()=>{
     let randomNumber = Math.floor(Math.random() * 6 +1)
     myLabel.innerText = randomNumber;
-    console.log(randomNumber);
+ 
+    if(myLabel.innerText === '4' && myLabel1.innerText === '5' && myLabel2.innerText === '6' || myLabel.innerText === '4' && myLabel1.innerText === '6' && myLabel2.innerText === '5' || myLabel.innerText === '5' && myLabel1.innerText === '4' && myLabel2.innerText === '6' || myLabel.innerText === '5' && myLabel1.innerText === '6' && myLabel2.innerText === '4' || myLabel.innerText === '6' && myLabel1.innerText === '4' && myLabel2.innerText === '5' || myLabel.innerText === '6' && myLabel1.innerText === '5' && myLabel2.innerText === '4'){
+        labelDiv.style.backgroundColor = 'rgb(76, 224, 35)';
+        labelDiv1.style.backgroundColor = 'rgb(76, 224, 35)';
+        labelDiv2.style.backgroundColor = 'rgb(76, 224, 35)';
 
-    //---if esle
-    if(myLabel.innerText === '4' && myLabel1.innerText === '5' && myLabel2.innerText === '6' ||
-        myLabel.innerText === '5' && myLabel1.innerText === '6' && myLabel2.innerText === '4' ||
-    myLabel.innerText === '6' && myLabel1.innerText === '4' && myLabel2.innerText === '5' ||
-myLabel.innerText === '6' && myLabel1.innerText === '5' && myLabel2.innerText === '4' ||
-myLabel.innerText === '5' && myLabel1.innerText === '4' && myLabel2.innerText === '6' ||
-myLabel.innerText === '4' && myLabel1.innerText === '6' && myLabel2.innerText === '5'){
-    labelDiv.style.backgroundColor = 'rgb(76, 224, 35)';
-    labelDiv1.style.backgroundColor = 'rgb(76, 224, 35)';
-    labelDiv2.style.backgroundColor = 'rgb(76, 224, 35)';
-    winLose.innerText = 'Cee Lo: You Win!';
-    alert('Congratulations!');
-
+        winLose.innerText = 'Cee Lo: You Win!';
+            setTimeout(()=>{
+                winLose.innerText = ''
+            }, 9000)
+        alert('Congratulations! "CEE LO"');
    
-}else if(myLabel.innerText === '1' && myLabel1.innerText === '1' && myLabel2.innerText === '1' || myLabel.innerText === '2' && myLabel1.innerText === '2' && myLabel2.innerText === '2'
-     || myLabel.innerText === '3' && myLabel1.innerText === '3' && myLabel2.innerText === '3' || myLabel.innerText === '4' && myLabel1.innerText === '4' && myLabel2.innerText === '4'
-     || myLabel.innerText === '5' && myLabel1.innerText === '5' && myLabel2.innerText === '5' || myLabel.innerText === '6' && myLabel1.innerText === '6' && myLabel2.innerText === '6'
-){
-    labelDiv.style.backgroundColor = 'rgb(76, 224, 35)';
-    labelDiv1.style.backgroundColor = 'rgb(76, 224, 35)';
-    labelDiv2.style.backgroundColor = 'rgb(67, 228, 22)';
-    winLose.innerText = 'Trips: You Win!';  
-    alert('Congratulations!');
-}else if(myLabel1.innerText === 1 && myLabel1.value === 2 && myLabel2 ===3){
-    labelDiv.style.backgroundColor = 'red';
-    labelDiv1.style.backgroundColor = 'red';
-    labelDiv2.style.backgrondColor = 'red';
-    winLose.innerText = '1,2,3: You Lose!';  
-    alert('Sorry!');   
-}else if(myLabel.value === 6 && myLabel1.value === 1  && myLabel2 === 1){
-    labelDiv.style.backgroundColor = 'rgb(76, 224, 35)';
-    labelDiv1.style.backgroundColor = 'rgb(76, 224, 35)';
-    labelDiv2.style.backgrondColor = 'rgb(76, 224, 35)';
-    winLose.innerHTML = '<h2>Six: You Win!</h2>'
-}
+    }else if(myLabel.innerText === '1' && myLabel1.innerText === '1' && myLabel2.innerText === '1' || myLabel.innerText === '2' && myLabel1.innerText === '2' && myLabel2.innerText === '2' || myLabel.innerText === '3' && myLabel1.innerText === '3' && myLabel2.innerText === '3' || myLabel.innerText === '4' && myLabel1.innerText === '4' && myLabel2.innerText === '4' || myLabel.innerText === '5' && myLabel1.innerText === '5' && myLabel2.innerText === '5' || myLabel.innerText === '6' && myLabel1.innerText === '6' && myLabel2.innerText === '6'){
+        labelDiv.style.backgroundColor = 'rgb(76, 224, 35)';
+        labelDiv1.style.backgroundColor = 'rgb(76, 224, 35)';
+        labelDiv2.style.backgroundColor = 'rgb(67, 228, 22)';
+
+        winLose.innerText = 'Trips: You Win!';  
+            setTimeout(()=>{
+                winLose.innerText = ''
+            }, 9000)
+        alert('Congratulations! "TRIPLES"');
+
+    }else if(myLabel1.innerText === '1' && myLabel1.innerText === '2' && myLabel2.innerText === '3' || myLabel1.innerText === '1' && myLabel1.innerText === '3' && myLabel2.innerText === '2' || myLabel1.innerText === '2' && myLabel1.innerText === '1' && myLabel2.innerText === '3' || myLabel1.innerText === '2' && myLabel1.innerText === '3' && myLabel2.innerText === '1' || myLabel1.innerText === '3' && myLabel1.innerText === '1' && myLabel2.innerText === '2' || myLabel1.innerText === '3' && myLabel1.innerText === '2' && myLabel2.innerText === '1'
+            || myLabel.innerText === '1' && myLabel1.innerText === '2'  && myLabel2.innerText === '2' || myLabel.innerText === '1' && myLabel1.innerText === '3'  && myLabel2.innerText === '3' || myLabel.innerText === '1' && myLabel1.innerText === '4'  && myLabel2.innerText === '4' || myLabel.innerText === '1' && myLabel1.innerText === '5'  && myLabel2.innerText === '5' || myLabel.innerText === '1' && myLabel1.innerText === '6'  && myLabel2.innerText === '6' || myLabel.innerText === '2' && myLabel1.innerText === '1'  && myLabel2.innerText === '2'
+            || myLabel.innerText === '3' && myLabel1.innerText === '1'  && myLabel2.innerText === '3' || myLabel.innerText === '4' && myLabel1.innerText === '1'  && myLabel2.innerText === '4' || myLabel.innerText === '5' && myLabel1.innerText === '1'  && myLabel2.innerText === '5' || myLabel.innerText === '6' && myLabel1.innerText === '1'  && myLabel2.innerText === '6' || myLabel.innerText === '2' && myLabel1.innerText === '2'  && myLabel2.innerText === '1' || myLabel.innerText === '3' && myLabel1.innerText === '3'  && myLabel2.innerText === '1'
+            || myLabel.innerText === '4' && myLabel1.innerText === '4'  && myLabel2.innerText === '1' || myLabel.innerText === '5' && myLabel1.innerText === '5'  && myLabel2.innerText === '1' || myLabel.innerText === '6' && myLabel1.innerText === '6'  && myLabel2.innerText === '1' ){
+        
+        labelDiv.style.backgroundColor = 'rgb(243, 63, 63)';
+        labelDiv1.style.backgroundColor = 'rgb(244, 64, 64)';
+        labelDiv2.style.backgroundColor = 'rgb(247, 70, 60)';
 
 
+        winLose.innerText = 'ACE: You Lose!';  
+            setTimeout(()=>{
+                winLose.innerText = ''
+            }, 9000)
+        alert('Sorry! "YOU ACED OUT"');   
+
+    }else if(myLabel.innerText === '6' && myLabel1.innerText === '1'  && myLabel2.innerText === '1' || myLabel.innerText === '6' && myLabel1.innerText === '2'  && myLabel2.innerText === '2' || myLabel.innerText === '6' && myLabel1.innerText === '3'  && myLabel2.innerText === '3' || myLabel.innerText === '6' && myLabel1.innerText === '4'  && myLabel2.innerText === '4' || myLabel.innerText === '6' && myLabel1.innerText === '5'  && myLabel2.innerText === '5'
+            || myLabel.innerText === '1' && myLabel1.innerText === '6'  && myLabel2.innerText === '1' || myLabel.innerText === '2' && myLabel1.innerText === '6'  && myLabel2.innerText === '2' || myLabel.innerText === '3' && myLabel1.innerText === '6'  && myLabel2.innerText === '3' || myLabel.innerText === '4' && myLabel1.innerText === '6'  && myLabel2.innerText === '4' || myLabel.innerText === '5' && myLabel1.innerText === '6'  && myLabel2.innerText === '6'
+            || myLabel.innerText === '1' && myLabel1.innerText === '1'  && myLabel2.innerText === '6' || myLabel.innerText === '2' && myLabel1.innerText === '2'  && myLabel2.innerText === '6' || myLabel.innerText === '3' && myLabel1.innerText === '3'  && myLabel2.innerText === '6' || myLabel.innerText === '4' && myLabel1.innerText === '4'  && myLabel2.innerText === '6' || myLabel.innerText === '5' && myLabel1.innerText === '5'  && myLabel2.innerText === '6'){
+        
+        labelDiv.style.backgroundColor = 'rgb(76, 224, 35)';
+        labelDiv1.style.backgroundColor = 'rgb(76, 224, 35)';
+        labelDiv2.style.backgroundColor = 'rgb(76, 224, 35)';
+
+        winLose.innerText = 'You Win!'
+            setTimeout(()=>{
+                winLose.innerText = ''
+            }, 9000)
+        alert('Congratulations! "YOU WIN"');
+    }
 })
 
 
